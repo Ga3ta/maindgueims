@@ -4,7 +4,6 @@ if __name__=='__main__':
     background_width=int(576)
     background_height=int(576)
     square_size=int(250)
-
     a = open("assets/Tp.txt", "r")
     elements=[]
     for line in a:
@@ -30,6 +29,10 @@ if __name__=='__main__':
 
     color=(255,255,255)
 
+    pygame.mixer.init()
+    pygame.mixer.music.load('assets/DK.OGG')
+    pygame.mixer.music.set_volume(1.0)
+    pygame.mixer.music.play(-1)
     pygame.init()
     clock = pygame.time.Clock()
 
@@ -94,6 +97,7 @@ if __name__=='__main__':
                 lives-=1
 
         screen.blit(bg_surface,(0,0))
+
 
         if lives>2:
             screen.blit(lifes, ((background_width//10)*(9),background_width//10))
