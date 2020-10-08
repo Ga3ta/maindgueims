@@ -1,8 +1,8 @@
 import pygame, sys, random
 
 if __name__=='__main__':
-    background_width=int(1000)
-    background_height=int(1000)
+    background_width=int(576)
+    background_height=int(576)
     square_size=int(250)
 
     a = open("assets/Tp.txt", "r")
