@@ -15,5 +15,5 @@ def new_quadratic():
         print(-b/(2*a))
         return([-b/(2*a)])
     else:
-        print([(-b-sqrt(d)/(2*a)), (-b+sqrt(d)/(2*a))])
+        print([round(-b-sqrt(d)/(2*a), 2), round(-b+sqrt(d)/(2*a), 2)])
         return([(-b-sqrt(d)/(2*a)), (-b+sqrt(d)/(2*a))])
