@@ -8,9 +8,10 @@ def throw_questions():
         e = line.split(",")
         question_data.append({"name": e[0], "symbol": e[1], "number": int(e[2])})
 
-    big_var= question_data[38]["symbol"]
-    lil_var = question_data[38]["number"]
-    name_var = question_data[38]["name"]
+    random_num=random.randrange(1,118)
+    big_var= question_data[random_num]["symbol"]
+    lil_var = question_data[random_num]["number"]
+    name_var = question_data[random_num]["name"]
     data=[big_var,lil_var,name_var]
 
     return data
