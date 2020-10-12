@@ -14,8 +14,10 @@ if __name__=='__main__':
     clock = pygame.time.Clock()
 
     screen=pygame.display.set_mode((background_size,background_size))
-    bg_surface=pygame.image.load('assets/background.jpg')
-    bg_surface=pygame.transform.scale(bg_surface,(background_size,background_size))
+    bg_surface_menu=pygame.image.load('assets/menu.jpg')
+    bg_surface_menu=pygame.transform.scale(bg_surface_menu,(background_size,background_size))
+    bg_surface_game1=pygame.image.load('assets/background.jpg')
+    bg_surface_game1=pygame.transform.scale(bg_surface_game1,(background_size,background_size))
 
     menu=Menu(background_size,screen)
     menu.init_var()
@@ -33,10 +35,12 @@ if __name__=='__main__':
                 display.lives-=1
                 showing=1
 
-        screen.blit(bg_surface,(0,0))
+
         if showing==0:
+            screen.blit(bg_surface_menu, (0, 0))
             menu.show()
         else:
+            screen.blit(bg_surface_game1, (0, 0))
             display.show()
         pygame.display.update()
         clock.tick(120)
