@@ -9,7 +9,7 @@ def new_quadratic():
     c = float(randint(-20, 20))
     d = b**2-4*a*c
     if(d<0):
-        print("Ño")
+        print("No")
         return("No hay soluciones")
     elif(d==0):
         print(-b/(2*a))
