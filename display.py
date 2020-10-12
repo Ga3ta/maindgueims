@@ -1,6 +1,7 @@
 import pygame
-from element import *
-from answers_element import *
+from box import *
+from answers_box import *
+from screen_text import *
 
 class Display:
 
@@ -24,20 +25,23 @@ class Display:
         self.lifes_textRect = self.score_text.get_rect()
         self.lifes_textRect.center = ((self.size // 10) * (8)+self.size//9, self.size // 18)
 
-        self.element = Element(self.size, self.screen)
-        self.element_answers1 = AnswersElement(self.size, 0, self.screen)
-        self.element_answers2 = AnswersElement(self.size, 1, self.screen)
-        self.element_answers3 = AnswersElement(self.size, -1, self.screen)
-        self.element.init_var()
-        self.element_answers1.init_var()
-        self.element_answers2.init_var()
-        self.element_answers3.init_var()
+        self.question_box = Box(self.size, self.screen)
+        self.box_answer1 = Box(self.size, self.screen,1,0)
+        self.box_answer2 = Box(self.size, self.screen,1,1)
+        self.box_answer3 = Box(self.size, self.screen,1,-1)
+        self.screen_text = ScreenText(self.size,self.screen)
+        self.screen_text.init_var()
+        self.question_box.init_var()
+        self.box_answer1.init_var()
+        self.box_answer2.init_var()
+        self.box_answer3.init_var()
 
     def show(self):
-        self.element.show()
-        self.element_answers1.show()
-        self.element_answers2.show()
-        self.element_answers3.show()
+        self.question_box.show()
+        self.box_answer1.show()
+        self.box_answer2.show()
+        self.box_answer3.show()
+        self.screen_text.show()
 
         if self.lives > 2:
            self.screen.blit(self.lifes, ((self.size // 10) * (9), self.size // 10))
