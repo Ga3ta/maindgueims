@@ -25,22 +25,20 @@ class AnswersElement:
 
         self.color = (255, 255, 255)
 
-        self.element_answers_font = pygame.font.Font('assets/Diagramm-Regular.ttf', 30)
-
         self.lil_square_size = int(self.size // 4)
 
-        self.lil_square_pos_x = int(self.size // 2 - self.lil_square_size*2 // 2 // 2)
-        self.lil_square_pos_y = int((self.size // 2 - self.lil_square_size*2 // 2) + ((self.size // 14) * 6))
+        self.lil_square_pos_x = int(self.size//2-self.lil_square_size//2+(self.lil_square_size+self.size//20)*self.pos)
+        self.lil_square_pos_y = int((self.size//6)*5-self.lil_square_size//2)
 
+        self.element_answers_font = pygame.font.Font('assets/Diagramm-Regular.ttf', self.lil_square_size//2)
         self.element_answer_text = self.element_answers_font.render(str(self.answer1), True, (0, 0, 0), (255, 255, 255))
         self.element_answer_textRect = self.element_answer_text.get_rect()
-        self.element_answer_textRect.center = (self.size // 2 - 100, self.size // 2 + (self.size // 3))
+        self.element_answer_textRect.center = (self.lil_square_pos_x+self.lil_square_size//2, self.lil_square_pos_y+self.lil_square_size//2)
 
 
     def show(self):
+        pygame.draw.rect(self.screen, self.color,[self.lil_square_pos_x, self.lil_square_pos_y, self.lil_square_size, self.lil_square_size])
         self.screen.blit(self.element_answer_text, self.element_answer_textRect)
-        pygame.draw.rect(self.screen, self.color,
-                         [self.lil_square_pos_x - self.size // 3, self.lil_square_pos_y, self.lil_square_size, self.lil_square_size])
 
 
 
