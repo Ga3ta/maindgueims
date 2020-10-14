@@ -1,0 +1,3 @@
+Si un tren va a {0} km/h en una vía de {1} km, ¿cuánto tiempo tardará en recorrer toda la vía?
+Si un tren recorre una vía de {0} km en {1} horas, ¿a qué velocidad iba?
+Si un tren recorre una vía a {0} km/h en {1} horas, ¿de qué distancia era la vía?
