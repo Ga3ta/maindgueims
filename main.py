@@ -1,6 +1,7 @@
 import pygame, sys
 from display import *
 from menu import *
+from display_physics_problems import *
 
 
 if __name__=='__main__':
@@ -9,7 +10,7 @@ if __name__=='__main__':
     pygame.mixer.init()
     pygame.mixer.music.load('assets/DK.OGG')
     pygame.mixer.music.set_volume(1.0)
-    pygame.mixer.music.play(-1)
+    #pygame.mixer.music.play(-1)
     pygame.init()
     clock = pygame.time.Clock()
 
@@ -29,6 +30,8 @@ if __name__=='__main__':
     menu.init_var()
     display=Display(background_size,screen)
     display.init_var()
+    display_physics=DisplayPhysics(background_size,screen)
+    display_physics.init_var()
 
     while display.lives>0:
         for event in pygame.event.get():
@@ -67,7 +70,7 @@ if __name__=='__main__':
                 showing = 4
         elif showing==1:
             screen.blit(bg_surface_game1, (0, 0))
-            display.show()
+            display_physics.show()
         elif showing == 2:
             screen.blit(bg_surface_game2, (0, 0))
             display.show()
