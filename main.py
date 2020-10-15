@@ -3,7 +3,7 @@ from display import *
 from menu import *
 from display_physics_problems import *
 from display_math_problems import *
-from display_orthography import *
+from display_orthography_problems import *
 
 
 if __name__=='__main__':
@@ -32,14 +32,9 @@ if __name__=='__main__':
     menu.init_var()
     display=Display(background_size,screen)
     display.init_var()
-    display_physics=DisplayPhysics(background_size,screen)
-    display_physics.init_var()
-    display_math=DisplayMath(background_size,screen)
-    display_math.init_var()
-    display_orthography=DisplayOrthography(background_size,screen)
-    display_orthography.init_var()
 
-    while display.lives>0:
+
+    while True:
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
@@ -76,16 +71,16 @@ if __name__=='__main__':
                 showing = 4
         elif showing==1:
             screen.blit(bg_surface_game1, (0, 0))
-            display_physics.show()
+            display.show(3)
         elif showing == 2:
             screen.blit(bg_surface_game2, (0, 0))
-            display_orthography.show()
+            display.show(1)
         elif showing == 3:
             screen.blit(bg_surface_game3, (0, 0))
-            display.show()
+            display.show(4)
         elif showing == 4:
             screen.blit(bg_surface_game4, (0, 0))
-            display_math.show()
+            display.show(2)
         print(showing)
         pygame.display.update()
         clock.tick(120)

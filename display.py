@@ -1,7 +1,9 @@
-import pygame
-from box import *
-from answers_box import *
-from screen_text import *
+from display_math_problems import *
+from display_physics_problems import *
+from display_chemistry_problems import *
+from display_orthography_problems import *
+from display_screen_elements import *
+
 
 class Display:
 
@@ -10,45 +12,26 @@ class Display:
         self.screen = screen
 
     def init_var(self):
-        self.score = 100
-        self.lives = 3;
-        self.lifes = pygame.image.load('assets/life.png')
-        self.lifes = pygame.transform.scale(self.lifes, (self.size//15, self.size//15))
+        self.display_orthography=DisplayOrthography(self.size,self.screen)
+        self.display_orthography.init_var()
+        self.display_math=DisplayMath(self.size,self.screen)
+        self.display_math.init_var()
+        self.display_physics=DisplayPhysics(self.size,self.screen)
+        self.display_physics.init_var()
+        self.display_chemestry=DisplayChemistry(self.size,self.screen)
+        self.display_chemestry.init_var()
+        self.display_screen_elements=DisplayScreen(self.size,self.screen)
+        self.display_screen_elements.init_var()
 
-        self.secondary_font = pygame.font.Font('assets/Diagramm-Regular.ttf', self.size//20)
+    def show(self,game):
+        self.game=game
+        if self.game == 1:
+            self.display_orthography.show()
+        elif self.game == 2:
+            self.display_math.show()
+        elif self.game == 3:
+            self.display_physics.show()
+        elif self.game == 4:
+            self.display_chemestry.show()
+        self.display_screen_elements.show()
 
-        self.score_text = self.secondary_font.render('Score: '+str(self.score), True, (0, 0, 0), (255, 255, 255))
-        self.score_textRect = self.score_text.get_rect()
-        self.score_textRect.center = (self.size // 5, self.size // 18)
-
-        self.lifes_text = self.secondary_font.render('Lifes', True, (0, 0, 0), (255, 255, 255))
-        self.lifes_textRect = self.score_text.get_rect()
-        self.lifes_textRect.center = ((self.size // 10) * (8)+self.size//9, self.size // 18)
-
-        self.question_box = Box(self.size, self.screen)
-        self.box_answer1 = Box(self.size, self.screen,1,0)
-        self.box_answer2 = Box(self.size, self.screen,1,1)
-        self.box_answer3 = Box(self.size, self.screen,1,-1)
-        self.screen_text = ScreenText(self.size,self.screen)
-        self.screen_text.init_var()
-        self.question_box.init_var()
-        self.box_answer1.init_var()
-        self.box_answer2.init_var()
-        self.box_answer3.init_var()
-
-    def show(self):
-        self.question_box.show()
-        self.box_answer1.show()
-        self.box_answer2.show()
-        self.box_answer3.show()
-        self.screen_text.show()
-
-        if self.lives > 2:
-           self.screen.blit(self.lifes, ((self.size // 10) * (9), self.size // 10))
-        if self.lives > 1:
-           self.screen.blit(self.lifes, ((self.size // 10) * (8), self.size // 10))
-        if self.lives > 0:
-           self.screen.blit(self.lifes, ((self.size // 10) * (7), self.size // 10))
-
-        self.screen.blit(self.score_text, self.score_textRect)
-        self.screen.blit(self.lifes_text, self.lifes_textRect)

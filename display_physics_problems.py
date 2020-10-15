@@ -14,12 +14,6 @@ class DisplayPhysics:
         self.exercise2 = '¿cuánto tiempo tardará en recorrer toda la vía?'
         self.train_asset = pygame.image.load('assets/tren.jpg')
         self.train_asset = pygame.transform.scale(self.train_asset, (600//3, 472//3))
-        self.box_answer1 = Box(self.size, self.screen,1,0)
-        self.box_answer2 = Box(self.size, self.screen,1,1)
-        self.box_answer3 = Box(self.size, self.screen,1,-1)
-        self.box_answer1.init_var()
-        self.box_answer2.init_var()
-        self.box_answer3.init_var()
 
         self.secondary_font = pygame.font.Font('assets/Diagramm-Regular.ttf', self.size//25)
 
@@ -32,9 +26,6 @@ class DisplayPhysics:
         self.exercise2_textRect.center = (self.size //2, self.size // 2+self.size // 7)
 
     def show(self):
-        self.box_answer1.show()
-        self.box_answer2.show()
-        self.box_answer3.show()
 
         self.screen.blit(self.train_asset, ((self.size // 2) -(600//3//2), self.size // 2-(472//3//2)-self.size//8))
         self.screen.blit(self.exercise_text, self.exercise_textRect)
