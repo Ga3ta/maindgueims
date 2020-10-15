@@ -6,6 +6,9 @@ class Menu:
         self.screen = screen
 
     def init_var(self):
+        self.bg_surface_menu = pygame.image.load('assets/menu.jpg')
+        self.bg_surface_menu = pygame.transform.scale(self.bg_surface_menu, (self.size, self.size))
+
         self.secondary_font = pygame.font.Font('assets/Diagramm-Regular.ttf', self.size//15)
 
         self.title_text = self.secondary_font.render('TRIVIA', True, (0, 0, 0), (255, 255, 255))
@@ -30,9 +33,38 @@ class Menu:
 
 
     def show(self):
+        self.screen.blit(self.bg_surface_menu, (0, 0))
         self.screen.blit(self.title_text, self.title_textRect)
         self.screen.blit(self.game1_text, self.game1_textRect)
         self.screen.blit(self.game2_text, self.game2_textRect)
         self.screen.blit(self.game3_text, self.game3_textRect)
         self.screen.blit(self.game4_text, self.game4_textRect)
+
+    def menu_mech(self):
+        if pygame.mouse.get_pos()[0] > self.size // 2 - self.size // 9 \
+                and pygame.mouse.get_pos()[0] < self.size // 2 + self.size // 9 \
+                and pygame.mouse.get_pos()[1] > self.size // 2 - self.size // 6 - self.size // 28 \
+                and pygame.mouse.get_pos()[1] < self.size // 2 - self.size // 6 + self.size // 28 \
+                and pygame.mouse.get_pressed()[0]:
+            return 1
+        if pygame.mouse.get_pos()[0] > self.size // 2 - self.size // 7 \
+                and pygame.mouse.get_pos()[0] < self.size // 2 + self.size // 7 \
+                and pygame.mouse.get_pos()[1] > self.size // 2 - self.size // 28 \
+                and pygame.mouse.get_pos()[1] < self.size // 2 + self.size // 28 \
+                and pygame.mouse.get_pressed()[0]:
+            return 2
+        if pygame.mouse.get_pos()[0] > self.size // 2 - self.size // 7 \
+                and pygame.mouse.get_pos()[0] < self.size // 2 + self.size // 7 \
+                and pygame.mouse.get_pos()[1] > self.size // 2 + self.size // 6 - self.size // 28 \
+                and pygame.mouse.get_pos()[1] < self.size // 2 + self.size // 6 + self.size // 28 \
+                and pygame.mouse.get_pressed()[0]:
+            return 3
+        if pygame.mouse.get_pos()[0] > self.size // 2 - self.size // 4 \
+                and pygame.mouse.get_pos()[0] < self.size // 2 + self.size // 4 \
+                and pygame.mouse.get_pos()[1] > self.size // 2 + self.size // 3 - self.size // 28 \
+                and pygame.mouse.get_pos()[1] < self.size // 2 + self.size // 3 + self.size // 28 \
+                and pygame.mouse.get_pressed()[0]:
+            return 4
+        else:
+            return 0
 

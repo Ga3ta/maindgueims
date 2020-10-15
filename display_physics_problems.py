@@ -9,6 +9,9 @@ class DisplayPhysics:
         self.screen = screen
 
     def init_var(self):
+        self.bg_surface_game = pygame.image.load('assets/background.jpg')
+        self.bg_surface_game = pygame.transform.scale(self.bg_surface_game, (self.size, self.size))
+
         self.exercise = 'Si un tren va a 100 km/h en una vía de 100 km,'
         self.exercise2 = '¿cuánto tiempo tardará en recorrer toda la vía?'
         self.train_asset = pygame.image.load('assets/tren.jpg')
@@ -25,7 +28,7 @@ class DisplayPhysics:
         self.exercise2_textRect.center = (self.size //2, self.size // 2+self.size // 7)
 
     def show(self):
-
+        self.screen.blit(self.bg_surface_game, (0, 0))
         self.screen.blit(self.train_asset, ((self.size // 2) -(600//(self.size//160)//2), self.size // 2-((600//(self.size//160)//2)+self.size//12)))
         self.screen.blit(self.exercise_text, self.exercise_textRect)
         self.screen.blit(self.exercise2_text, self.exercise2_textRect)

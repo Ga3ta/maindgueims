@@ -10,6 +10,8 @@ class DisplayMath:
         self.screen = screen
 
     def init_var(self):
+        self.bg_surface_game = pygame.image.load('assets/background4.jpg')
+        self.bg_surface_game = pygame.transform.scale(self.bg_surface_game, (self.size, self.size))
         self.values=new_quadratic()
 
         self.secondary_font = pygame.font.Font('assets/Diagramm-Regular.ttf', self.size//10)
@@ -20,6 +22,7 @@ class DisplayMath:
         self.exercise_textRect.center = (self.size //2, self.size // 2)
 
     def show(self):
+        self.screen.blit(self.bg_surface_game, (0, 0))
         self.screen.blit(self.exercise_text, self.exercise_textRect)
         print(self.values)
 

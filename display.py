@@ -3,6 +3,7 @@ from display_physics_problems import *
 from display_chemistry_problems import *
 from display_orthography_problems import *
 from display_screen_elements import *
+from answers_display import *
 
 
 class Display:
@@ -22,6 +23,8 @@ class Display:
         self.display_chemestry.init_var()
         self.display_screen_elements=DisplayScreen(self.size,self.screen)
         self.display_screen_elements.init_var()
+        self.answers_display=AnswersDisplay(self.size,self.screen)
+        self.answers_display.init_var()
 
     def show(self,game):
         self.game=game
@@ -34,4 +37,6 @@ class Display:
         elif self.game == 4:
             self.display_chemestry.show()
         self.display_screen_elements.show()
+        self.answers_display.show()
+
 

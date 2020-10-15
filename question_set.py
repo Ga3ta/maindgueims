@@ -17,11 +17,8 @@ def throw_questions():
     lil_var = data[random_num]["number"]
     name_var = data[random_num]["name"]
     random_num = random.randrange(0, 117)
-    ans1_var= data[random_num]["name"]
     random_num = random.randrange(0, 117)
-    ans2_var = data[random_num]["name"]
     random_num = random.randrange(0, 117)
-    ans3_var = data[random_num]["name"]
     data_q=[big_var,lil_var,name_var]
     return data_q
 
