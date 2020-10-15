@@ -1,6 +1,5 @@
 import pygame
 from box import *
-from answers_box import *
 from screen_text import *
 
 class DisplayPhysics:
@@ -13,7 +12,7 @@ class DisplayPhysics:
         self.exercise = 'Si un tren va a 100 km/h en una vía de 100 km,'
         self.exercise2 = '¿cuánto tiempo tardará en recorrer toda la vía?'
         self.train_asset = pygame.image.load('assets/tren.jpg')
-        self.train_asset = pygame.transform.scale(self.train_asset, (600//3, 472//3))
+        self.train_asset = pygame.transform.scale(self.train_asset, (600//(self.size//160), 472//(self.size//160)))
 
         self.secondary_font = pygame.font.Font('assets/Diagramm-Regular.ttf', self.size//25)
 
@@ -27,7 +26,7 @@ class DisplayPhysics:
 
     def show(self):
 
-        self.screen.blit(self.train_asset, ((self.size // 2) -(600//3//2), self.size // 2-(472//3//2)-self.size//8))
+        self.screen.blit(self.train_asset, ((self.size // 2) -(600//(self.size//160)//2), self.size // 2-((600//(self.size//160)//2)+self.size//12)))
         self.screen.blit(self.exercise_text, self.exercise_textRect)
         self.screen.blit(self.exercise2_text, self.exercise2_textRect)
 

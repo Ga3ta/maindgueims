@@ -9,7 +9,6 @@ class DisplayChemistry:
 
     def init_var(self):
         self.question_box = Box(self.size, self.screen)
-
         self.screen_text = ScreenText(self.size,self.screen)
         self.screen_text.init_var()
         self.question_box.init_var()

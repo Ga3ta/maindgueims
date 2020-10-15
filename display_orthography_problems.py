@@ -1,6 +1,5 @@
 import pygame
 from box import *
-from answers_box import *
 from screen_text import *
 from quadratic import *
 
