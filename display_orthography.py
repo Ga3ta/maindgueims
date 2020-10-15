@@ -4,14 +4,14 @@ from answers_box import *
 from screen_text import *
 from quadratic import *
 
-class DisplayMath:
+class DisplayOrthography:
 
     def __init__(self, size, screen):
         self.size = size
         self.screen = screen
 
     def init_var(self):
-        self.values=new_quadratic()
+        self.words='aquivaloqueestahaciendogaeta'
         self.box_answer1 = Box(self.size, self.screen,1,0)
         self.box_answer2 = Box(self.size, self.screen,1,1)
         self.box_answer3 = Box(self.size, self.screen,1,-1)
@@ -21,8 +21,7 @@ class DisplayMath:
 
         self.secondary_font = pygame.font.Font('assets/Diagramm-Regular.ttf', self.size//10)
 
-        self.exercise_text = self.secondary_font.render(str(self.values[0])+'x^2 '+str(self.values[1])+'x '+str(self.values[0]),
-                                                        True, (0, 0, 0), (255, 255, 255))
+        self.exercise_text = self.secondary_font.render(str(self.words),True, (0, 0, 0), (255, 255, 255))
         self.exercise_textRect = self.exercise_text.get_rect()
         self.exercise_textRect.center = (self.size //2, self.size // 2)
 
@@ -32,5 +31,4 @@ class DisplayMath:
         self.box_answer3.show()
 
         self.screen.blit(self.exercise_text, self.exercise_textRect)
-        print(self.values)
 

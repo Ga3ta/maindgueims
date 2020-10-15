@@ -2,6 +2,8 @@ import pygame, sys
 from display import *
 from menu import *
 from display_physics_problems import *
+from display_math_problems import *
+from display_orthography import *
 
 
 if __name__=='__main__':
@@ -10,7 +12,7 @@ if __name__=='__main__':
     pygame.mixer.init()
     pygame.mixer.music.load('assets/DK.OGG')
     pygame.mixer.music.set_volume(1.0)
-    #pygame.mixer.music.play(-1)
+    pygame.mixer.music.play(-1)
     pygame.init()
     clock = pygame.time.Clock()
 
@@ -32,6 +34,10 @@ if __name__=='__main__':
     display.init_var()
     display_physics=DisplayPhysics(background_size,screen)
     display_physics.init_var()
+    display_math=DisplayMath(background_size,screen)
+    display_math.init_var()
+    display_orthography=DisplayOrthography(background_size,screen)
+    display_orthography.init_var()
 
     while display.lives>0:
         for event in pygame.event.get():
@@ -73,13 +79,13 @@ if __name__=='__main__':
             display_physics.show()
         elif showing == 2:
             screen.blit(bg_surface_game2, (0, 0))
-            display.show()
+            display_orthography.show()
         elif showing == 3:
             screen.blit(bg_surface_game3, (0, 0))
             display.show()
         elif showing == 4:
             screen.blit(bg_surface_game4, (0, 0))
-            display.show()
+            display_math.show()
         print(showing)
         pygame.display.update()
         clock.tick(120)
