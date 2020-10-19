@@ -1,6 +1,6 @@
 import pygame
 from box import *
-from screen_text import *
+from screen_text_chemistry import *
 
 class DisplayPhysics:
 
@@ -28,7 +28,6 @@ class DisplayPhysics:
         self.exercise2_textRect.center = (self.size //2, self.size // 2+self.size // 7)
 
     def show(self):
-        self.screen.blit(self.bg_surface_game, (0, 0))
         self.screen.blit(self.train_asset, ((self.size // 2) -(600//(self.size//160)//2), self.size // 2-((600//(self.size//160)//2)+self.size//12)))
         self.screen.blit(self.exercise_text, self.exercise_textRect)
         self.screen.blit(self.exercise2_text, self.exercise2_textRect)

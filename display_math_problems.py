@@ -1,7 +1,7 @@
 import pygame
 from box import *
-from screen_text import *
-from quadratic import *
+from screen_text_chemistry import *
+from math_set import *
 
 class DisplayMath:
 
@@ -22,7 +22,5 @@ class DisplayMath:
         self.exercise_textRect.center = (self.size //2, self.size // 2)
 
     def show(self):
-        self.screen.blit(self.bg_surface_game, (0, 0))
         self.screen.blit(self.exercise_text, self.exercise_textRect)
-        print(self.values)
 

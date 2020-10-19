@@ -32,13 +32,16 @@ if __name__=='__main__':
             menu.show()
             showing=menu.menu_mech()
         elif showing==1:
+            display.display_physics.screen.blit(display.display_physics.bg_surface_game, (0, 0))
             display.show(3)
         elif showing == 2:
+            display.display_orthography.screen.blit(display.display_orthography.bg_surface_game, (0, 0))
             display.show(1)
         elif showing == 3:
+            display.display_chemestry.screen.blit(display.display_chemestry.bg_surface_game, (0, 0))
             display.show(4)
         elif showing == 4:
+            display.display_math.screen.blit(display.display_math.bg_surface_game, (0, 0))
             display.show(2)
-        print(showing)
         pygame.display.update()
         clock.tick(120)
