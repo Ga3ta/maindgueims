@@ -3,7 +3,7 @@ from display_physics_problems import *
 from display_chemistry_problems import *
 from display_orthography_problems import *
 from display_screen_elements import *
-from answers_display import *
+from display_answers import *
 
 
 class Display:

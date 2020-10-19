@@ -1,5 +1,4 @@
 from random import randint
-import re
 def get_prob():    
     file = open("assets/problemasv.txt", "r", encoding='utf-8')
     a = randint(1,3)
