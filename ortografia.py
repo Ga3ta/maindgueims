@@ -10,5 +10,4 @@ def get_palabra():
     correct = palabra[rand2]
     description = palabra[rand2+size]
     bank = palabra[:size]
-    print(correct, description, bank)
-get_palabra()
+    return(correct, description, bank)

@@ -8,3 +8,5 @@ Más,Mas,Adverbio de cantidad mayor,Conjunción
 Yendo,Llendo,Conjugación del verbo ir,No existe
 Vaya,Valla,Baya,Conjugación del verbo ir,Línea de estacas para separar,Fruto similar a las moras
 Calló,Callo,Cayó,Cayo,Pretérito del verbo callar (guardar silencio),Dureza en la piel,Pretérito del verbo caer,Montículo de arena o una isla
+Iba, IVA,Pretérito del verbo ir,Impuesto al Valor Agregado
+Cocer,Coser,Sinónimo de hervir,Unir dos piezas con un hilo
