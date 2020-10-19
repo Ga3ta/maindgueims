@@ -1,7 +1,7 @@
 import pygame
 from box import *
 from screen_text_chemistry import *
-from math_set import *
+import question_set
 
 class DisplayMath:
 
@@ -10,9 +10,10 @@ class DisplayMath:
         self.screen = screen
 
     def init_var(self):
+        self.values=[]
         self.bg_surface_game = pygame.image.load('assets/background4.jpg')
         self.bg_surface_game = pygame.transform.scale(self.bg_surface_game, (self.size, self.size))
-        self.values=new_quadratic()
+        self.values=question_set.var_answers(4)
 
         self.secondary_font = pygame.font.Font('assets/Diagramm-Regular.ttf', self.size//10)
 
@@ -21,6 +22,14 @@ class DisplayMath:
         self.exercise_textRect = self.exercise_text.get_rect()
         self.exercise_textRect.center = (self.size //2, self.size // 2)
 
+        self.values.pop(0)
+        self.values.pop(0)
+        self.values.pop(0)
+        self.answer_text=display_answers.AnswersDisplay(self.size,self.screen,self.values)
+        self.answer_text.init_var()
+
+
     def show(self):
+        self.answer_text.show()
         self.screen.blit(self.exercise_text, self.exercise_textRect)
 

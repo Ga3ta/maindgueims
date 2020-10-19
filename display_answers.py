@@ -8,8 +8,6 @@ class AnswersDisplay:
         self.screen=screen
         self.data_answers=data_answers
     def init_var(self):
-        self.data_answers.pop(0)
-        self.data_answers.pop(0)
         random.shuffle(self.data_answers)
         self.element_answers_font = pygame.font.Font('assets/Diagramm-Regular.ttf',(self.size // 4) // 6)
 

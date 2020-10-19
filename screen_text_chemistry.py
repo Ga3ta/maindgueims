@@ -27,6 +27,8 @@ class ScreenText:
         self.element_name_textRect = self.element_name_text.get_rect()
         self.element_name_textRect.center = (self.size//2, self.size // 2 + (((self.size//100)*45) // 10))
 
+        self.data_questions.pop(0)
+        self.data_questions.pop(0)
         self.answer_text=display_answers.AnswersDisplay(self.size,self.screen,self.data_questions)
         self.answer_text.init_var()
 
