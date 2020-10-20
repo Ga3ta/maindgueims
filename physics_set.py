@@ -23,6 +23,4 @@ def get_prob():
     e=e.format(vehiculos[v], b, c)
     p = e.split(',')[0]
     q = e.split(',')[1]
-    print({"problema": p, "pregunta": q, "respuesta": ans})
-    return({"problema": p, "pregunta": q, "respuesta": ans})
-get_prob()
+    return[p, q, ans]
