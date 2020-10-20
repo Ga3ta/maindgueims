@@ -1,6 +1,6 @@
 import pygame
 import random
-import question_set
+
 
 class AnswersDisplay:
     def __init__(self,size,screen,data_answers):
