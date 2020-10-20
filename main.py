@@ -1,6 +1,7 @@
 import pygame, sys
 from display import *
 from menu import *
+from time import sleep
 
 def get_released():
     print('0la')
@@ -122,5 +123,29 @@ if __name__=='__main__':
         elif showing == 4:
             display.display_math.screen.blit(display.display_math.bg_surface_game, (0, 0))
             display.show(2)
+            index = display.display_math.answer_text.correct_index
+            if(pygame.mouse.get_pressed()[0]):
+                if(pygame.mouse.get_pos()[0] > positions[index][0]
+                and pygame.mouse.get_pos()[0] < positions[index][0]+background_size//4
+                and pygame.mouse.get_pos()[1] > positions[index][1]
+                and pygame.mouse.get_pos()[1] < positions[index][1]+background_size//4):
+                    display.display_screen_elements.score+=100
+                    display.display_screen_elements.show()
+                    display.new_window()
+                    print(display.display_screen_elements.score)
+                elif(pygame.mouse.get_pos()[0] > positions[index-1][0]
+                and pygame.mouse.get_pos()[0] < positions[index-1][0]+background_size//4
+                and pygame.mouse.get_pos()[1] > positions[index-1][1]
+                and pygame.mouse.get_pos()[1] < positions[index-1][1]+background_size//4 
+                or pygame.mouse.get_pos()[0] > positions[index-2][0]
+                and pygame.mouse.get_pos()[0] < positions[index-2][0]+background_size//4
+                and pygame.mouse.get_pos()[1] > positions[index-2][1]
+                and pygame.mouse.get_pos()[1] < positions[index-2][1]+background_size//4):
+                    display.display_screen_elements.lives-=1
+                    display.display_screen_elements.show()
+                    display.new_window()
+                if(display.display_screen_elements.lives==0):
+                    display.init_var()
+                    showing = 0
         pygame.display.update()
         clock.tick(120)
