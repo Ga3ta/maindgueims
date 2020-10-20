@@ -3,10 +3,6 @@ from display import *
 from menu import *
 from time import sleep
 
-def get_released():
-    print('0la')
-
-
 if __name__=='__main__':
     background_size = int(500)
     showing=0
@@ -149,3 +145,4 @@ if __name__=='__main__':
                     showing = 0
         pygame.display.update()
         clock.tick(120)
+        print(get_released())

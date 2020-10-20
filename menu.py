@@ -1,5 +1,21 @@
 import pygame
 
+gp=False
+
+def get_released():
+    global gp
+    if(gp==False):
+        if(pygame.mouse.get_pressed()[0]==True):
+            gp=True
+        return False
+    else:
+        if(pygame.mouse.get_pressed()[0]==False):
+            gp = False
+            return True
+        else:
+            return False
+
+
 class Menu:
     def __init__(self, size, screen):
         self.size = size
@@ -45,25 +61,25 @@ class Menu:
                 and pygame.mouse.get_pos()[0] < self.size // 2 + self.size // 9 \
                 and pygame.mouse.get_pos()[1] > self.size // 2 - self.size // 6 - self.size // 28 \
                 and pygame.mouse.get_pos()[1] < self.size // 2 - self.size // 6 + self.size // 28 \
-                and pygame.mouse.get_pressed()[0]:
+                and get_released():
             return 1
         if pygame.mouse.get_pos()[0] > self.size // 2 - self.size // 7 \
                 and pygame.mouse.get_pos()[0] < self.size // 2 + self.size // 7 \
                 and pygame.mouse.get_pos()[1] > self.size // 2 - self.size // 28 \
                 and pygame.mouse.get_pos()[1] < self.size // 2 + self.size // 28 \
-                and pygame.mouse.get_pressed()[0]:
+                and get_released():
             return 2
         if pygame.mouse.get_pos()[0] > self.size // 2 - self.size // 7 \
                 and pygame.mouse.get_pos()[0] < self.size // 2 + self.size // 7 \
                 and pygame.mouse.get_pos()[1] > self.size // 2 + self.size // 6 - self.size // 28 \
                 and pygame.mouse.get_pos()[1] < self.size // 2 + self.size // 6 + self.size // 28 \
-                and pygame.mouse.get_pressed()[0]:
+                and get_released():
             return 3
         if pygame.mouse.get_pos()[0] > self.size // 2 - self.size // 4 \
                 and pygame.mouse.get_pos()[0] < self.size // 2 + self.size // 4 \
                 and pygame.mouse.get_pos()[1] > self.size // 2 + self.size // 3 - self.size // 28 \
                 and pygame.mouse.get_pos()[1] < self.size // 2 + self.size // 3 + self.size // 28 \
-                and pygame.mouse.get_pressed()[0]:
+                and get_released():
             return 4
         else:
             return 0
