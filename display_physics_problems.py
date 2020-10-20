@@ -39,8 +39,8 @@ class DisplayPhysics:
 
         self.values.pop(0)
         self.values[0]=self.values[2]
-        self.values[1]=(random.randint(int(self.values[0]-30),int(self.values[0]+30))) + round(random.randint(0,100)/100,2)
-        self.values[2] =(random.randint(int(self.values[0] - 30),int(self.values[0] + 30))) + round(random.randint(0,100)/100,2)
+        self.values[1]="{0:.2f}".format(random.randint(int(self.values[0]-30),int(self.values[0]+30)) + (random.randint(0,100)/100))
+        self.values[2] ="{0:.2f}".format(random.randint(int(self.values[0]-30),int(self.values[0]+30)) + (random.randint(0,100)/100))
         self.answer_text=display_answers.AnswersDisplay(self.size,self.screen,self.values)
         self.answer_text.init_var()
 

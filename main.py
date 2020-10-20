@@ -47,7 +47,6 @@ if __name__=='__main__':
                     display.display_screen_elements.score+=100
                     display.display_screen_elements.show()
                     display.new_window()
-                    print(display.display_screen_elements.score)
                 elif(pygame.mouse.get_pos()[0] > positions[index-1][0]
                 and pygame.mouse.get_pos()[0] < positions[index-1][0]+background_size//4
                 and pygame.mouse.get_pos()[1] > positions[index-1][1]
@@ -74,7 +73,6 @@ if __name__=='__main__':
                     display.display_screen_elements.score+=100
                     display.display_screen_elements.show()
                     display.new_window()
-                    print(display.display_screen_elements.score)
                 elif(pygame.mouse.get_pos()[0] > positions[index-1][0]
                 and pygame.mouse.get_pos()[0] < positions[index-1][0]+background_size//4
                 and pygame.mouse.get_pos()[1] > positions[index-1][1]
@@ -101,7 +99,6 @@ if __name__=='__main__':
                     display.display_screen_elements.score+=100
                     display.display_screen_elements.show()
                     display.new_window()
-                    print(display.display_screen_elements.score)
                 elif(pygame.mouse.get_pos()[0] > positions[index-1][0]
                 and pygame.mouse.get_pos()[0] < positions[index-1][0]+background_size//4
                 and pygame.mouse.get_pos()[1] > positions[index-1][1]
@@ -128,7 +125,6 @@ if __name__=='__main__':
                     display.display_screen_elements.score+=100
                     display.display_screen_elements.show()
                     display.new_window()
-                    print(display.display_screen_elements.score)
                 elif(pygame.mouse.get_pos()[0] > positions[index-1][0]
                 and pygame.mouse.get_pos()[0] < positions[index-1][0]+background_size//4
                 and pygame.mouse.get_pos()[1] > positions[index-1][1]
