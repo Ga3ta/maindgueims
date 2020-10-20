@@ -1,8 +1,9 @@
 from random import randint
-import re
-def get_prob():    
+vehiculos = ('tren', 'barco', 'auto')
+def get_prob(): 
     file = open("assets/problemasv.txt", "r", encoding='utf-8')
     a = randint(1,3)
+    v = randint(0,2)
     for i in range (a):
         e = file.readline()
         e = e.split("\n")[0]
@@ -19,4 +20,9 @@ def get_prob():
     else:
         ans = b*c
     file.close()
-    return({"problema": e.format(b,c), "respuesta": ans})
+    e=e.format(vehiculos[v], b, c)
+    p = e.split(',')[0]
+    q = e.split(',')[1]
+    print({"problema": p, "pregunta": q, "respuesta": ans})
+    return({"problema": p, "pregunta": q, "respuesta": ans})
+get_prob()
