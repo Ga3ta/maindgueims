@@ -23,4 +23,4 @@ def get_prob():
     e=e.format(vehiculos[v], b, c)
     p = e.split(',')[0]
     q = e.split(',')[1]
-    return[p, q, ans, vehiculos[v]]
+    return[v, p, q, ans]
