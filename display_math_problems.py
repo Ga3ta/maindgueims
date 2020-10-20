@@ -1,7 +1,7 @@
 import pygame
 from box import *
 from screen_text_chemistry import *
-import question_set
+import math_set
 
 class DisplayMath:
 
@@ -13,8 +13,7 @@ class DisplayMath:
         self.values=[]
         self.bg_surface_game = pygame.image.load('assets/background4.jpg')
         self.bg_surface_game = pygame.transform.scale(self.bg_surface_game, (self.size, self.size))
-        self.values=question_set.var_answers(4)
-
+        self.values=math_set.new_quadratic()
         self.secondary_font = pygame.font.Font('assets/Diagramm-Regular.ttf', self.size//10)
 
         self.exercise_text = self.secondary_font.render(str(self.values[0])+'x^2 '+str(self.values[1])+'x '+str(self.values[0]),

@@ -1,7 +1,7 @@
 import pygame
-import question_set
 import random
 import display_answers
+import chemistry_set
 
 class ScreenText:
     def __init__(self, size, screen):
@@ -9,7 +9,7 @@ class ScreenText:
         self.screen = screen
 
     def init_var(self):
-        self.data_questions=question_set.var_answers(3)
+        self.data_questions=chemistry_set.element_variables()
 
         element_font = pygame.font.Font('assets/Diagramm-Regular.ttf', ((self.size//100)*45)//2)
         self.element_symbol_text = element_font.render(str(self.data_questions[0]), True, (0, 0, 0), (255, 255, 255))
