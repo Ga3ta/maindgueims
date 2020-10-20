@@ -9,7 +9,7 @@ class DisplayScreen:
 
     def init_var(self):
         self.score = 100
-        self.lives = 3;
+        self.lives = 3
 
         self.lifes = pygame.image.load('assets/life.png')
         self.lifes = pygame.transform.scale(self.lifes, (self.size//15, self.size//15))
