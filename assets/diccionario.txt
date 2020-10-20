@@ -5,7 +5,7 @@ Hay,Ahí,Ay,Conjugación del verbo haber,Adverbio de lugar,Onomatopeya
 Allá,Halla,Haya,Señalación de un espacio,Conjugación del verbo hallar (encontrar),Conjugación del verbo haber
 Él,El,Pronombre personal,Artículo
 Más,Mas,Adverbio de cantidad mayor,Conjunción
-Yendo,Llendo,Conjugación del verbo ir,No existe
+Yendo,Llendo,Conjugación del verbo ir,La palabra no existe
 Vaya,Valla,Baya,Conjugación del verbo ir,Línea de estacas para separar,Fruto similar a las moras
 Calló,Callo,Cayó,Cayo,Pretérito del verbo callar (guardar silencio),Dureza en la piel,Pretérito del verbo caer,Montículo de arena o una isla
 Iba, IVA,Pretérito del verbo ir,Impuesto al Valor Agregado
