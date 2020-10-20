@@ -145,4 +145,3 @@ if __name__=='__main__':
                     showing = 0
         pygame.display.update()
         clock.tick(120)
-        print(get_released())
