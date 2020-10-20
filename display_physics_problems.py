@@ -1,7 +1,8 @@
 import pygame
 from box import *
-from screen_text_chemistry import *
+import random
 import physics_set
+import display_answers
 
 class DisplayPhysics:
 

@@ -1,6 +1,6 @@
 from random import randint
 
-def get_palabra():
+def get_word():
     file = open("assets/diccionario.txt", "r", encoding='utf-8')
     palabras = file.read().split("\n")
     rand = randint(0, len(palabras)-1)
@@ -10,4 +10,4 @@ def get_palabra():
     correct = palabra[rand2]
     description = palabra[rand2+size]
     bank = palabra[:size]
-    return(correct, description, bank)
+    return[correct, description, bank]
