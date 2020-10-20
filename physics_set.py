@@ -18,7 +18,7 @@ def get_prob():
     elif a ==2:
         ans = round(b/c, 2)
     else:
-        ans = b*c
+        ans = float(b*c)
     file.close()
     e=e.format(vehiculos[v], b, c)
     p = e.split(',')[0]

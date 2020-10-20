@@ -6,10 +6,10 @@ class DisplayScreen:
     def __init__(self, size, screen):
         self.size = size
         self.screen = screen
-
-    def init_var(self):
         self.score = 100
         self.lives = 3
+        
+    def init_var(self):
 
         self.lifes = pygame.image.load('assets/life.png')
         self.lifes = pygame.transform.scale(self.lifes, (self.size//15, self.size//15))

@@ -38,8 +38,9 @@ class DisplayPhysics:
         self.exercise2_textRect.center = (self.size //2, self.size // 2+self.size // 7)
 
         self.values.pop(0)
-        self.values[0]=int(random.randint(int(self.values[2]-30),int(self.values[2]+30)))
-        self.values[1] =int(random.randint(int(self.values[2] - 30),int(self.values[2] + 30)))
+        self.values[0]=self.values[2]
+        self.values[1]=(random.randint(int(self.values[0]-30),int(self.values[0]+30))) + round(random.randint(0,100)/100,2)
+        self.values[2] =(random.randint(int(self.values[0] - 30),int(self.values[0] + 30))) + round(random.randint(0,100)/100,2)
         self.answer_text=display_answers.AnswersDisplay(self.size,self.screen,self.values)
         self.answer_text.init_var()
 

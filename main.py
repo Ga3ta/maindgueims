@@ -38,14 +38,19 @@ if __name__=='__main__':
             display.display_physics.screen.blit(display.display_physics.bg_surface_game, (0, 0))
             display.show(3)
             index = display.display_physics.answer_text.correct_index
-            if(pygame.mouse.get_pos()[0] > positions[index][0]
-            and pygame.mouse.get_pos()[0] < positions[index][0]+background_size//4
-            and pygame.mouse.get_pos()[1] > positions[index][1]
-            and pygame.mouse.get_pos()[1] < positions[index][1]+background_size//4
-            and pygame.mouse.get_pressed()[0]):
-                display.init_var()
-                print(index, positions[index][0], positions[index][1])
-            print(pygame.mouse.get_pos(), positions[index][0], positions[index][1], display.display_physics.answer_text.correct_ans)
+            if(pygame.mouse.get_pressed()[0]):
+                if(pygame.mouse.get_pos()[0] > positions[index][0]
+                and pygame.mouse.get_pos()[0] < positions[index][0]+background_size//4
+                and pygame.mouse.get_pos()[1] > positions[index][1]
+                and pygame.mouse.get_pos()[1] < positions[index][1]+background_size//4):
+                    display.display_screen_elements.score+=100
+                    display.display_screen_elements.show()
+                    display.new_window()
+                    print(display.display_screen_elements.score)
+                else:
+                    display.display_screen_elements.lives-=1
+                    display.display_screen_elements.show()
+                    display.new_window()
         elif showing == 2:
             display.display_orthography.screen.blit(display.display_orthography.bg_surface_game, (0, 0))
             display.show(1)

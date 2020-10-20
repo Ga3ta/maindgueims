@@ -23,7 +23,18 @@ class Display:
         self.display_chemestry.init_var()
         self.display_screen_elements=DisplayScreen(self.size,self.screen)
         self.display_screen_elements.init_var()
-
+    
+    def new_window(self):
+        self.display_orthography=DisplayOrthography(self.size,self.screen)
+        self.display_orthography.init_var()
+        self.display_math=DisplayMath(self.size,self.screen)
+        self.display_math.init_var()
+        self.display_physics=DisplayPhysics(self.size,self.screen)
+        self.display_physics.init_var()
+        self.display_chemestry=DisplayChemistry(self.size,self.screen)
+        self.display_chemestry.init_var()
+        self.display_screen_elements.init_var()
+        
     def show(self,game):
         self.game=game
         self.display_screen_elements.show()
