@@ -18,7 +18,10 @@ if __name__=='__main__':
     menu.init_var()
     display=Display(background_size,screen)
     display.init_var()
-
+    
+    positions=[(display.display_screen_elements.box_answer1.lil_square_pos_x, display.display_screen_elements.box_answer1.lil_square_pos_y),
+    (display.display_screen_elements.box_answer2.lil_square_pos_x, display.display_screen_elements.box_answer2.lil_square_pos_y),
+    (display.display_screen_elements.box_answer3.lil_square_pos_x, display.display_screen_elements.box_answer3.lil_square_pos_y)]
 
     while True:
         for event in pygame.event.get():
@@ -34,6 +37,14 @@ if __name__=='__main__':
         elif showing==1:
             display.display_physics.screen.blit(display.display_physics.bg_surface_game, (0, 0))
             display.show(3)
+            index = display.display_physics.answer_text.correct_index
+            if(pygame.mouse.get_pos()[0] > positions[index][0]-background_size//4
+            and pygame.mouse.get_pos()[0] < positions[index][0]+background_size//4
+            and pygame.mouse.get_pos()[1] > positions[index][1]-background_size//4
+            and pygame.mouse.get_pos()[1] < positions[index][1]+background_size//4
+            and pygame.mouse.get_pressed()[0]):
+                display.init_var()
+                print(index)
         elif showing == 2:
             display.display_orthography.screen.blit(display.display_orthography.bg_surface_game, (0, 0))
             display.show(1)
