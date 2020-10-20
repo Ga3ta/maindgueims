@@ -1,5 +1,5 @@
 from box import *
-from screen_text import *
+from screen_text_chemistry import *
 
 class DisplayChemistry:
 
@@ -16,7 +16,6 @@ class DisplayChemistry:
         self.question_box.init_var()
 
     def show(self):
-        self.screen.blit(self.bg_surface_game, (0, 0))
         self.question_box.show()
         self.screen_text.show()
 
