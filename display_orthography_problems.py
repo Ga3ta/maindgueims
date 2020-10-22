@@ -3,12 +3,14 @@ from box import *
 from screen_text_chemistry import *
 import orthography_set
 
+#Una clase que muestra los problemas de ortografia
 class DisplayOrthography:
-
+    # La función con la que se instancia el objeto
     def __init__(self, size, screen):
         self.size = size
         self.screen = screen
-
+    # Una función que llama el diccionario de palabras de orthography_set y inicializa los textos
+    #función que se llama solo 1 vez
     def init_var(self):
         self.intake=orthography_set.get_word()
         self.values=[]
@@ -27,7 +29,7 @@ class DisplayOrthography:
         self.values.append(self.intake[2][1])
         self.answer_text=display_answers.AnswersDisplay(self.size,self.screen,self.values)
         self.answer_text.init_var()
-
+    # Una función que esta en un ciclo mostrando los elementos
     def show(self):
         self.answer_text.show()
         self.screen.blit(self.exercise_text, self.exercise_textRect)

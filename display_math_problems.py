@@ -4,12 +4,16 @@ from box import *
 from screen_text_chemistry import *
 import math_set
 
+#Esta clase maneja los elementos que se deben mostrar en la pantalla de los problemas de matematicas
 class DisplayMath:
 
+    # La función con la que se instancia el objeto
     def __init__(self, size, screen):
         self.size = size
         self.screen = screen
-
+    # En esta función se llama a el diccionario que tiene los datos de los problemas de matematicas
+    # y se inicializan los textos que se mostraran en la pantalla
+    # función que se llama solo 1 vez
     def init_var(self):
         self.values = []
         self.bg_surface_game = pygame.image.load('assets/background4.jpg')
@@ -38,7 +42,7 @@ class DisplayMath:
         self.answer_text=display_answers.AnswersDisplay(self.size,self.screen,self.values)
         self.answer_text.init_var()
 
-
+    # Una función que esta en un ciclo mostrando los elementos
     def show(self):
         self.answer_text.show()
         self.screen.blit(self.exercise_text, self.exercise_textRect)

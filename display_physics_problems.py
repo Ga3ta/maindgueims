@@ -4,12 +4,15 @@ import random
 import physics_set
 import display_answers
 
+#Una clase que se encarga de manejar lo que se visualiza en la pantalla de problemas de fisica
 class DisplayPhysics:
-
+    # La función con la que se instancia el objeto
     def __init__(self, size, screen):
         self.size = size
         self.screen = screen
 
+    #Una funcion que manda llamar a todos los assets necesarios, inicializa los textos en base a los archivos
+    #cargados en physics_set, función que se llama solo 1 vez
     def init_var(self):
         self.values=physics_set.get_prob()
         self.bg_surface_game = pygame.image.load('assets/background.jpg')
@@ -44,6 +47,7 @@ class DisplayPhysics:
         self.answer_text=display_answers.AnswersDisplay(self.size,self.screen,self.values)
         self.answer_text.init_var()
 
+    # Una función que esta en un ciclo mostrando los elementos
     def show(self):
         self.answer_text.show()
         self.screen.blit(self.vehicle_asset, ((self.size // 2) -(600//(self.size//160)//2), self.size // 2-((600//(self.size//160)//2)+self.size//12)))

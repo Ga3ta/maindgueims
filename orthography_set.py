@@ -11,3 +11,4 @@ def get_word():
     description = palabra[rand2+size]
     bank = palabra[:size]
     return[correct, description, bank]
+
