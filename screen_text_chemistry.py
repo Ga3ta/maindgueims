@@ -3,11 +3,13 @@ import random
 import display_answers
 import chemistry_set
 
+#Clase auxiliar de display_chemistry_problems para mostrar los textos de los problemas de quimica
 class ScreenText:
+    # La función con la que se instancia el objeto
     def __init__(self, size, screen):
         self.size = size
         self.screen = screen
-
+    # La función que inicializa los textos y manda llamar el diccionario con los mismos,funcion que se llama solo 1 vez
     def init_var(self):
         self.data_questions=chemistry_set.element_variables()
 
@@ -32,8 +34,8 @@ class ScreenText:
         self.answer_text=display_answers.AnswersDisplay(self.size,self.screen,self.data_questions)
         self.answer_text.init_var()
 
+    # Una función que esta en un ciclo mostrando los elementos
     def show(self):
-
         self.answer_text.show()
         self.screen.blit(self.element_symbol_text, self.element_symbol_textRect)
         self.screen.blit(self.element_number_text, self.element_number_textRect)

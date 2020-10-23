@@ -1,14 +1,16 @@
 import pygame
 from box import *
 
+#Clase auxiliar de display, la cual muestra elementos que siempre estan presentes en los juegos (vidas, score, ....)
 class DisplayScreen:
-
+    # La función con la que se instancia el objeto
     def __init__(self, size, screen):
         self.size = size
         self.screen = screen
         self.score = 100
         self.lives = 3
-        
+
+    # Esta función inicializa los textos, las cajas de respuesta y el sprite de corazon, se llama 1 vez
     def init_var(self):
 
         self.lifes = pygame.image.load('assets/life.png')
@@ -30,7 +32,7 @@ class DisplayScreen:
         self.box_answer1.init_var()
         self.box_answer2.init_var()
         self.box_answer3.init_var()
-
+    # Una función que esta en un ciclo mostrando los elementos
     def show(self):
 
         if self.lives > 2:
