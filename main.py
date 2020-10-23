@@ -51,11 +51,11 @@ if __name__=='__main__':
                     pygame.quit()
                     sys.exit()
 
-    '''
-    Hacemos ifs para checar el minijuego escogido o menu, y en cada minijuego obtenemos la casilla correcta
-    y checamos si el mouse fue presionado en la respuesta correcta para sumar puntos o quitar vidas, y después
-    en cualquier caso generar un nuevo problema, en caso de agotarse las vidas, regresa al menú
-    '''
+
+    #Hacemos ifs para checar el minijuego escogido o menu, y en cada minijuego obtenemos la casilla correcta
+    #y checamos si el mouse fue presionado en la respuesta correcta para sumar puntos o quitar vidas, y después
+    #en cualquier caso generar un nuevo problema, en caso de agotarse las vidas, regresa al menú
+
         if showing==0:
             menu.show()
             showing=menu.menu_mech()
