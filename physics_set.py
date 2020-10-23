@@ -1,5 +1,17 @@
+'''
+Del módulo random, importamos la función randint para nuestro generador
+'''
 from random import randint
+'''
+Creamos una tupla que indica el tipo de vehículo del problema
+'''
 vehiculos = ('tren', 'barco', 'auto')
+
+'''
+Creamos una función que de manera aleatoria crea un problema que involucra
+velocidad, tiempo y distancia con valores aleatorios y regresa el enunciado
+del problema que se extrae de un txt, el tipo de vehículo y la respuesta
+'''
 def get_prob(): 
     file = open("assets/problemasv.txt", "r", encoding='utf-8')
     a = randint(1,3)

@@ -1,9 +1,17 @@
+'''
+De los módulos que hicimos, importamos display y menú y además, pygame y sys para la interfaz gráfica
+'''
 import pygame, sys
 from display import *
 from menu import *
-from time import sleep
 
+'''
+Aquí iniciamos nuestro main loop
+'''
 if __name__=='__main__':
+    '''
+    Aquí declaramos nuestras constantes de inicio, así como la música y el reloj e iniciamos pygame
+    '''
     background_size = int(500)
     showing=0
     pygame.mixer.init()
@@ -13,17 +21,29 @@ if __name__=='__main__':
     pygame.init()
     clock = pygame.time.Clock()
 
+    '''
+    Creamos nuestro objeto display y lo iniciamos
+    '''
     screen=pygame.display.set_mode((background_size,background_size))
 
+    '''
+    Creamos nuestro menú y lo iniciamos
+    '''
     menu=Menu(background_size,screen)
     menu.init_var()
     display=Display(background_size,screen)
     display.init_var()
     
+    '''
+    Creamos una lista con tuplas sobre las posiciones de las casillas de respuestas
+    '''
     positions=[(display.display_screen_elements.box_answer1.lil_square_pos_x, display.display_screen_elements.box_answer1.lil_square_pos_y),
     (display.display_screen_elements.box_answer2.lil_square_pos_x, display.display_screen_elements.box_answer2.lil_square_pos_y),
     (display.display_screen_elements.box_answer3.lil_square_pos_x, display.display_screen_elements.box_answer3.lil_square_pos_y)]
 
+    '''
+    Creamos una condición para checar si la tecla escape se ha presionado para salir del juego
+    '''
     while True:
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
@@ -31,7 +51,11 @@ if __name__=='__main__':
                     pygame.quit()
                     sys.exit()
 
-
+    '''
+    Hacemos ifs para checar el minijuego escogido o menu, y en cada minijuego obtenemos la casilla correcta
+    y checamos si el mouse fue presionado en la respuesta correcta para sumar puntos o quitar vidas, y después
+    en cualquier caso generar un nuevo problema, en caso de agotarse las vidas, regresa al menú
+    '''
         if showing==0:
             menu.show()
             showing=menu.menu_mech()
